@@ -1,0 +1,367 @@
+4 holes, A = 6.0, B = 0.15, C = 0.58, Upp = 4.0
+pressure = 0 GPa, Sz_set = [0]
+ed = {'d3z2r2': 0.046, 'dx2y2': 0.0, 'dxy': 0.823, 'dxz': 0.706, 'dyz': 0.706}
+ep = 2.47, tpd = 1.38, tpp = 0.537
+
+total weight = 0.9999999999999964
+d8_d8(1): 0.4343055026797803
+	(-1, 0, d3z2r2, dn)  (-1, 0, dx2y2, dn)  (1, 0, d3z2r2, up)  
+	(1, 0, dx2y2, up)  
+	Ni1: S = 1, Sz = -1, Ni2: S = 1, Sz = 1, bonding = 1
+	weight = 0.43422682667319684
+
+d8_d8(0): 0.217163516139621
+	(-1, 0, d3z2r2, dn)  (-1, 0, dx2y2, up)  (1, 0, d3z2r2, dn)  
+	(1, 0, dx2y2, up)  
+	Ni1: S = 1, Sz = 0, Ni2: S = 1, Sz = 0, bonding = 0
+	weight = 0.21711341333663156
+
+L_d9_d8(1): 0.08741564471080508
+	(-1, 0, d3z2r2, dn)  (-1, 1, py, dn)  (1, 0, d3z2r2, up)  
+	(1, 0, dx2y2, up)  
+	Ni1: S = 0, Sz = 0, Ni2: S = 1, Sz = 1, bonding = 1
+	weight = 0.018583863579013586
+
+	(-1, -1, py, up)  (-1, 0, d3z2r2, up)  (1, 0, d3z2r2, dn)  
+	(1, 0, dx2y2, dn)  
+	Ni1: S = 0, Sz = 0, Ni2: S = 1, Sz = -1, bonding = 1
+	weight = 0.018583863579013562
+
+	(-1, -1, py, dn)  (-1, 0, d3z2r2, dn)  (1, 0, d3z2r2, up)  
+	(1, 0, dx2y2, up)  
+	Ni1: S = 0, Sz = 0, Ni2: S = 1, Sz = 1, bonding = 1
+	weight = 0.018583863579013555
+
+	(-1, -1, py, dn)  (-1, 0, d3z2r2, up)  (1, 0, d3z2r2, dn)  
+	(1, 0, dx2y2, up)  
+	Ni1: S = 0, Sz = 0, Ni2: S = 1, Sz = 0, bonding = 1
+	weight = 0.009291931789508207
+
+	(-1, -1, py, up)  (-1, 0, d3z2r2, dn)  (1, 0, d3z2r2, dn)  
+	(1, 0, dx2y2, up)  
+	Ni1: S = 0, Sz = 0, Ni2: S = 1, Sz = 0, bonding = 1
+	weight = 0.009291931789508162
+
+	(-1, -1, py, up)  (-1, 0, dx2y2, up)  (1, 0, d3z2r2, dn)  
+	(1, 0, dx2y2, dn)  
+	Ni1: S = 0, Sz = 0, Ni2: S = 1, Sz = -1, bonding = 1
+	weight = 0.004344632471676332
+
+	(-1, -1, py, dn)  (-1, 0, dx2y2, dn)  (1, 0, d3z2r2, up)  
+	(1, 0, dx2y2, up)  
+	Ni1: S = 0, Sz = 0, Ni2: S = 1, Sz = 1, bonding = 1
+	weight = 0.00434463247167633
+
+	(-1, -1, py, up)  (-1, 0, dx2y2, dn)  (1, 0, d3z2r2, dn)  
+	(1, 0, dx2y2, up)  
+	Ni1: S = 0, Sz = 0, Ni2: S = 1, Sz = 0, bonding = 1
+	weight = 0.002172316235838514
+
+	(-1, -1, py, dn)  (-1, 0, dx2y2, up)  (1, 0, d3z2r2, dn)  
+	(1, 0, dx2y2, up)  
+	Ni1: S = 0, Sz = 0, Ni2: S = 1, Sz = 0, bonding = 1
+	weight = 0.002172316235838488
+
+d8_d9_L(-1): 0.0678477958586409
+	(-1, 0, d3z2r2, dn)  (-1, 0, dx2y2, dn)  (1, 0, d3z2r2, up)  
+	(2, 0, px, up)  
+	Ni1: S = 1, Sz = -1, Ni2: S = 0, Sz = 0, bonding = -1
+	weight = 0.018274750641977075
+
+	(-1, 0, d3z2r2, up)  (-1, 0, dx2y2, up)  (1, 0, d3z2r2, dn)  
+	(2, 0, px, dn)  
+	Ni1: S = 1, Sz = 1, Ni2: S = 0, Sz = 0, bonding = -1
+	weight = 0.01827475064197702
+
+	(-1, 0, d3z2r2, dn)  (-1, 0, dx2y2, up)  (1, 0, d3z2r2, up)  
+	(2, 0, px, dn)  
+	Ni1: S = 1, Sz = 0, Ni2: S = 0, Sz = 0, bonding = -1
+	weight = 0.009137375320989948
+
+	(-1, 0, d3z2r2, dn)  (-1, 0, dx2y2, up)  (1, 0, d3z2r2, dn)  
+	(2, 0, px, up)  
+	Ni1: S = 1, Sz = 0, Ni2: S = 0, Sz = 0, bonding = -1
+	weight = 0.009137375320989887
+
+	(-1, 0, d3z2r2, dn)  (-1, 0, dx2y2, dn)  (1, 0, dx2y2, up)  
+	(2, 0, px, up)  
+	Ni1: S = 1, Sz = -1, Ni2: S = 0, Sz = 0, bonding = -1
+	weight = 0.004335120088235214
+
+	(-1, 0, d3z2r2, up)  (-1, 0, dx2y2, up)  (1, 0, dx2y2, dn)  
+	(2, 0, px, dn)  
+	Ni1: S = 1, Sz = 1, Ni2: S = 0, Sz = 0, bonding = -1
+	weight = 0.004335120088235209
+
+	(-1, 0, d3z2r2, dn)  (-1, 0, dx2y2, up)  (1, 0, dx2y2, up)  
+	(2, 0, px, dn)  
+	Ni1: S = 1, Sz = 0, Ni2: S = 0, Sz = 0, bonding = -1
+	weight = 0.002167560044117947
+
+	(-1, 0, d3z2r2, dn)  (-1, 0, dx2y2, up)  (1, 0, dx2y2, dn)  
+	(2, 0, px, up)  
+	Ni1: S = 1, Sz = 0, Ni2: S = 0, Sz = 0, bonding = -1
+	weight = 0.0021675600441179404
+
+d9_L_d8(-1): 0.06114629036640098
+	(-1, 0, d3z2r2, up)  (0, 0, px, up)  (1, 0, d3z2r2, dn)  
+	(1, 0, dx2y2, dn)  
+	Ni1: S = 0, Sz = 0, Ni2: S = 1, Sz = -1, bonding = -1
+	weight = 0.022025632775047654
+
+	(-1, 0, d3z2r2, up)  (0, 0, px, dn)  (1, 0, d3z2r2, dn)  
+	(1, 0, dx2y2, up)  
+	Ni1: S = 0, Sz = 0, Ni2: S = 1, Sz = 0, bonding = -1
+	weight = 0.011012816387525305
+
+	(-1, 0, d3z2r2, dn)  (0, 0, px, up)  (1, 0, d3z2r2, dn)  
+	(1, 0, dx2y2, up)  
+	Ni1: S = 0, Sz = 0, Ni2: S = 1, Sz = 0, bonding = -1
+	weight = 0.011012816387525258
+
+	(-1, 0, dx2y2, up)  (0, 0, px, up)  (1, 0, d3z2r2, dn)  
+	(1, 0, dx2y2, dn)  
+	Ni1: S = 0, Sz = 0, Ni2: S = 1, Sz = -1, bonding = -1
+	weight = 0.005607979863736192
+
+	(-1, 0, dx2y2, dn)  (0, 0, px, dn)  (1, 0, d3z2r2, up)  
+	(1, 0, dx2y2, up)  
+	Ni1: S = 0, Sz = 0, Ni2: S = 1, Sz = 1, bonding = -1
+	weight = 0.0056079798637361875
+
+	(-1, 0, dx2y2, up)  (0, 0, px, dn)  (1, 0, d3z2r2, dn)  
+	(1, 0, dx2y2, up)  
+	Ni1: S = 0, Sz = 0, Ni2: S = 1, Sz = 0, bonding = -1
+	weight = 0.002803989931868464
+
+	(-1, 0, dx2y2, dn)  (0, 0, px, up)  (1, 0, d3z2r2, dn)  
+	(1, 0, dx2y2, up)  
+	Ni1: S = 0, Sz = 0, Ni2: S = 1, Sz = 0, bonding = -1
+	weight = 0.0028039899318684515
+
+d8_d9_L(1): 0.05024205835729297
+	(-1, 0, d3z2r2, dn)  (-1, 0, dx2y2, dn)  (1, 0, d3z2r2, up)  
+	(1, 1, py, up)  
+	Ni1: S = 1, Sz = -1, Ni2: S = 0, Sz = 0, bonding = 1
+	weight = 0.018583863579013555
+
+	(-1, 0, d3z2r2, dn)  (-1, 0, dx2y2, up)  (1, 0, d3z2r2, up)  
+	(1, 1, py, dn)  
+	Ni1: S = 1, Sz = 0, Ni2: S = 0, Sz = 0, bonding = 1
+	weight = 0.0092919317895082
+
+	(-1, 0, d3z2r2, dn)  (-1, 0, dx2y2, up)  (1, 0, d3z2r2, dn)  
+	(1, 1, py, up)  
+	Ni1: S = 1, Sz = 0, Ni2: S = 0, Sz = 0, bonding = 1
+	weight = 0.009291931789508151
+
+	(-1, 0, d3z2r2, up)  (-1, 0, dx2y2, up)  (1, 0, dx2y2, dn)  
+	(1, 1, py, dn)  
+	Ni1: S = 1, Sz = 1, Ni2: S = 0, Sz = 0, bonding = 1
+	weight = 0.004344632471676337
+
+	(-1, 0, d3z2r2, dn)  (-1, 0, dx2y2, dn)  (1, 0, dx2y2, up)  
+	(1, 1, py, up)  
+	Ni1: S = 1, Sz = -1, Ni2: S = 0, Sz = 0, bonding = 1
+	weight = 0.004344632471676334
+
+	(-1, 0, d3z2r2, dn)  (-1, 0, dx2y2, up)  (1, 0, dx2y2, dn)  
+	(1, 1, py, up)  
+	Ni1: S = 1, Sz = 0, Ni2: S = 0, Sz = 0, bonding = 1
+	weight = 0.0021723162358385146
+
+	(-1, 0, d3z2r2, dn)  (-1, 0, dx2y2, up)  (1, 0, dx2y2, up)  
+	(1, 1, py, dn)  
+	Ni1: S = 1, Sz = 0, Ni2: S = 0, Sz = 0, bonding = 1
+	weight = 0.0021723162358384842
+
+d8_L_d9(-1): 0.02220016387157692
+	(-1, 0, d3z2r2, up)  (-1, 0, dx2y2, up)  (0, 0, px, dn)  
+	(1, 0, d3z2r2, dn)  
+	Ni1: S = 1, Sz = 1, Ni2: S = 0, Sz = 0, bonding = -1
+	weight = 0.022025632775047647
+
+
+pressure = 29.5 GPa, Sz_set = [0]
+ed = {'d3z2r2': 0.095, 'dx2y2': 0.0, 'dxy': 1.06, 'dxz': 0.94, 'dyz': 0.94}
+ep = 2.9, tpd = 1.58, tpp = 0.562
+
+total weight = 1.000000000000002
+d8_d8(1): 0.41099787715403613
+	(-1, 0, d3z2r2, dn)  (-1, 0, dx2y2, dn)  (1, 0, d3z2r2, up)  
+	(1, 0, dx2y2, up)  
+	Ni1: S = 1, Sz = -1, Ni2: S = 1, Sz = 1, bonding = 1
+	weight = 0.4108188718139409
+
+d8_d8(0): 0.20554900331261008
+	(-1, 0, d3z2r2, dn)  (-1, 0, dx2y2, up)  (1, 0, d3z2r2, dn)  
+	(1, 0, dx2y2, up)  
+	Ni1: S = 1, Sz = 0, Ni2: S = 1, Sz = 0, bonding = 0
+	weight = 0.20540943590695468
+
+L_d9_d8(1): 0.09201099031427704
+	(-1, -1, py, up)  (-1, 0, d3z2r2, up)  (1, 0, d3z2r2, dn)  
+	(1, 0, dx2y2, dn)  
+	Ni1: S = 0, Sz = 0, Ni2: S = 1, Sz = -1, bonding = 1
+	weight = 0.019395978836264503
+
+	(-1, 0, d3z2r2, dn)  (-1, 1, py, dn)  (1, 0, d3z2r2, up)  
+	(1, 0, dx2y2, up)  
+	Ni1: S = 0, Sz = 0, Ni2: S = 1, Sz = 1, bonding = 1
+	weight = 0.01939597883626449
+
+	(-1, -1, py, dn)  (-1, 0, d3z2r2, dn)  (1, 0, d3z2r2, up)  
+	(1, 0, dx2y2, up)  
+	Ni1: S = 0, Sz = 0, Ni2: S = 1, Sz = 1, bonding = 1
+	weight = 0.019395978836264458
+
+	(-1, -1, py, up)  (-1, 0, d3z2r2, dn)  (1, 0, d3z2r2, dn)  
+	(1, 0, dx2y2, up)  
+	Ni1: S = 0, Sz = 0, Ni2: S = 1, Sz = 0, bonding = 1
+	weight = 0.009697989418131544
+
+	(-1, -1, py, dn)  (-1, 0, d3z2r2, up)  (1, 0, d3z2r2, dn)  
+	(1, 0, dx2y2, up)  
+	Ni1: S = 0, Sz = 0, Ni2: S = 1, Sz = 0, bonding = 1
+	weight = 0.009697989418131537
+
+	(-1, -1, py, dn)  (-1, 0, dx2y2, dn)  (1, 0, d3z2r2, up)  
+	(1, 0, dx2y2, up)  
+	Ni1: S = 0, Sz = 0, Ni2: S = 1, Sz = 1, bonding = 1
+	weight = 0.004769199051890421
+
+	(-1, -1, py, up)  (-1, 0, dx2y2, up)  (1, 0, d3z2r2, dn)  
+	(1, 0, dx2y2, dn)  
+	Ni1: S = 0, Sz = 0, Ni2: S = 1, Sz = -1, bonding = 1
+	weight = 0.004769199051890413
+
+	(-1, -1, py, dn)  (-1, 0, dx2y2, up)  (1, 0, d3z2r2, dn)  
+	(1, 0, dx2y2, up)  
+	Ni1: S = 0, Sz = 0, Ni2: S = 1, Sz = 0, bonding = 1
+	weight = 0.0023845995259450356
+
+	(-1, -1, py, up)  (-1, 0, dx2y2, dn)  (1, 0, d3z2r2, dn)  
+	(1, 0, dx2y2, up)  
+	Ni1: S = 0, Sz = 0, Ni2: S = 1, Sz = 0, bonding = 1
+	weight = 0.002384599525945028
+
+d8_d9_L(-1): 0.0713089559817879
+	(-1, 0, d3z2r2, dn)  (-1, 0, dx2y2, dn)  (1, 0, d3z2r2, up)  
+	(2, 0, px, up)  
+	Ni1: S = 1, Sz = -1, Ni2: S = 0, Sz = 0, bonding = -1
+	weight = 0.019018292574397588
+
+	(-1, 0, d3z2r2, up)  (-1, 0, dx2y2, up)  (1, 0, d3z2r2, dn)  
+	(2, 0, px, dn)  
+	Ni1: S = 1, Sz = 1, Ni2: S = 0, Sz = 0, bonding = -1
+	weight = 0.01901829257439758
+
+	(-1, 0, d3z2r2, dn)  (-1, 0, dx2y2, up)  (1, 0, d3z2r2, dn)  
+	(2, 0, px, up)  
+	Ni1: S = 1, Sz = 0, Ni2: S = 0, Sz = 0, bonding = -1
+	weight = 0.009509146287198102
+
+	(-1, 0, d3z2r2, dn)  (-1, 0, dx2y2, up)  (1, 0, d3z2r2, up)  
+	(2, 0, px, dn)  
+	Ni1: S = 1, Sz = 0, Ni2: S = 0, Sz = 0, bonding = -1
+	weight = 0.00950914628719806
+
+	(-1, 0, d3z2r2, dn)  (-1, 0, dx2y2, dn)  (1, 0, dx2y2, up)  
+	(2, 0, px, up)  
+	Ni1: S = 1, Sz = -1, Ni2: S = 0, Sz = 0, bonding = -1
+	weight = 0.004733916393635266
+
+	(-1, 0, d3z2r2, up)  (-1, 0, dx2y2, up)  (1, 0, dx2y2, dn)  
+	(2, 0, px, dn)  
+	Ni1: S = 1, Sz = 1, Ni2: S = 0, Sz = 0, bonding = -1
+	weight = 0.0047339163936352645
+
+	(-1, 0, d3z2r2, dn)  (-1, 0, dx2y2, up)  (1, 0, dx2y2, dn)  
+	(2, 0, px, up)  
+	Ni1: S = 1, Sz = 0, Ni2: S = 0, Sz = 0, bonding = -1
+	weight = 0.002366958196817459
+
+	(-1, 0, d3z2r2, dn)  (-1, 0, dx2y2, up)  (1, 0, dx2y2, up)  
+	(2, 0, px, dn)  
+	Ni1: S = 1, Sz = 0, Ni2: S = 0, Sz = 0, bonding = -1
+	weight = 0.00236695819681745
+
+d9_L_d8(-1): 0.06736029752642318
+	(-1, 0, d3z2r2, up)  (0, 0, px, up)  (1, 0, d3z2r2, dn)  
+	(1, 0, dx2y2, dn)  
+	Ni1: S = 0, Sz = 0, Ni2: S = 1, Sz = -1, bonding = -1
+	weight = 0.02363851215466117
+
+	(-1, 0, d3z2r2, dn)  (0, 0, px, up)  (1, 0, d3z2r2, dn)  
+	(1, 0, dx2y2, up)  
+	Ni1: S = 0, Sz = 0, Ni2: S = 1, Sz = 0, bonding = -1
+	weight = 0.011819256077329813
+
+	(-1, 0, d3z2r2, up)  (0, 0, px, dn)  (1, 0, d3z2r2, dn)  
+	(1, 0, dx2y2, up)  
+	Ni1: S = 0, Sz = 0, Ni2: S = 1, Sz = 0, bonding = -1
+	weight = 0.011819256077329806
+
+	(-1, 0, dx2y2, up)  (0, 0, px, up)  (1, 0, d3z2r2, dn)  
+	(1, 0, dx2y2, dn)  
+	Ni1: S = 0, Sz = 0, Ni2: S = 1, Sz = -1, bonding = -1
+	weight = 0.006530484558569733
+
+	(-1, 0, dx2y2, dn)  (0, 0, px, dn)  (1, 0, d3z2r2, up)  
+	(1, 0, dx2y2, up)  
+	Ni1: S = 0, Sz = 0, Ni2: S = 1, Sz = 1, bonding = -1
+	weight = 0.006530484558569731
+
+	(-1, 0, dx2y2, up)  (0, 0, px, dn)  (1, 0, d3z2r2, dn)  
+	(1, 0, dx2y2, up)  
+	Ni1: S = 0, Sz = 0, Ni2: S = 1, Sz = 0, bonding = -1
+	weight = 0.0032652422792846703
+
+	(-1, 0, dx2y2, dn)  (0, 0, px, up)  (1, 0, d3z2r2, dn)  
+	(1, 0, dx2y2, up)  
+	Ni1: S = 0, Sz = 0, Ni2: S = 1, Sz = 0, bonding = -1
+	weight = 0.0032652422792846625
+
+d8_d9_L(1): 0.053208252007295384
+	(-1, 0, d3z2r2, dn)  (-1, 0, dx2y2, dn)  (1, 0, d3z2r2, up)  
+	(1, 1, py, up)  
+	Ni1: S = 1, Sz = -1, Ni2: S = 0, Sz = 0, bonding = 1
+	weight = 0.019395978836264517
+
+	(-1, 0, d3z2r2, dn)  (-1, 0, dx2y2, up)  (1, 0, d3z2r2, dn)  
+	(1, 1, py, up)  
+	Ni1: S = 1, Sz = 0, Ni2: S = 0, Sz = 0, bonding = 1
+	weight = 0.009697989418131542
+
+	(-1, 0, d3z2r2, dn)  (-1, 0, dx2y2, up)  (1, 0, d3z2r2, up)  
+	(1, 1, py, dn)  
+	Ni1: S = 1, Sz = 0, Ni2: S = 0, Sz = 0, bonding = 1
+	weight = 0.00969798941813153
+
+	(-1, 0, d3z2r2, up)  (-1, 0, dx2y2, up)  (1, 0, dx2y2, dn)  
+	(1, 1, py, dn)  
+	Ni1: S = 1, Sz = 1, Ni2: S = 0, Sz = 0, bonding = 1
+	weight = 0.0047691990518904225
+
+	(-1, 0, d3z2r2, dn)  (-1, 0, dx2y2, dn)  (1, 0, dx2y2, up)  
+	(1, 1, py, up)  
+	Ni1: S = 1, Sz = -1, Ni2: S = 0, Sz = 0, bonding = 1
+	weight = 0.004769199051890411
+
+	(-1, 0, d3z2r2, dn)  (-1, 0, dx2y2, up)  (1, 0, dx2y2, up)  
+	(1, 1, py, dn)  
+	Ni1: S = 1, Sz = 0, Ni2: S = 0, Sz = 0, bonding = 1
+	weight = 0.0023845995259450248
+
+	(-1, 0, d3z2r2, dn)  (-1, 0, dx2y2, up)  (1, 0, dx2y2, dn)  
+	(1, 1, py, up)  
+	Ni1: S = 1, Sz = 0, Ni2: S = 0, Sz = 0, bonding = 1
+	weight = 0.00238459952594502
+
+d8_L_d9(-1): 0.023924625180888608
+	(-1, 0, d3z2r2, up)  (-1, 0, dx2y2, up)  (0, 0, px, dn)  
+	(1, 0, d3z2r2, dn)  
+	Ni1: S = 1, Sz = 1, Ni2: S = 0, Sz = 0, bonding = -1
+	weight = 0.023638512154661142
+
+
