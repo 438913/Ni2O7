@@ -32,6 +32,7 @@ def compute_main(A, Upp, ed, ep, tpd, tpp):
     T_pp = ham.create_tpp_nn_matrix(vs, tpp_nn_hop_fac)
     Esite = ham.create_Esite_matrix(vs, A, ed, ep)
     H = T_pd + T_pp + Esite
+    H0 = T_pd + T_pp + Esite
     d_double, d_part, p_double = basis.get_double_occ_list(vs)
     S_Ni_val_set = []
     Sz_Ni_val_set = []
@@ -56,7 +57,7 @@ def compute_main(A, Upp, ed, ep, tpd, tpp):
 if __name__ == '__main__':
     print(f'Start computation of Ni2O7 {pam.holes} holes')
     print('==========================')
-    folder_path = './data'
+    folder_path = 'data'
     file_paths = ['./data/type.txt', './data/val.txt', './data/weight.txt']
     os.makedirs(folder_path, exist_ok=True)
     A = pam.A
@@ -66,7 +67,7 @@ if __name__ == '__main__':
         with open(file_path, 'w') as f:
             f.write(f'{pam.holes} holes, A = {A}, B = {pam.B}, C = {pam.C}, Upp = {Upp}\n')
 
-    for i in [0, 4]:
+    for i in range(5):
         pressure = pam.pressures[i]
         print(f'pressure = {pressure} GPa, Sz_set = {pam.Sz_set}')
         ed = {key: item[i] for key, item in pam.eds.items()}

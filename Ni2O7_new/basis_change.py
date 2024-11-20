@@ -57,8 +57,8 @@ def create_single_triplet_matrix(vs, d_double, d_part):
     dim = vs.dim
     lookup_tbl = vs.lookup_tbl
     data = []; row = []; col = []
-    S_val = np.zeros(dim, dtype=int)
-    Sz_val = np.zeros(dim, dtype=int)
+    S_val = 2 * np.ones(dim, dtype=int)
+    Sz_val = 2 * np.ones(dim, dtype=int)
     AorB_sym = np.zeros(dim, dtype=int)
     count_list = []
     for i in range(dim):
@@ -84,19 +84,19 @@ def create_single_triplet_matrix(vs, d_double, d_part):
                 partner_state[hole_idx1][-1], partner_state[hole_idx2][-1] = (
                     partner_state[hole_idx2][-1], partner_state[hole_idx1][-1]
                 )
-                ph = 1 if count_inversions(partner_state) % 2 == 0 else -1
+                ph = 1 if count_inversions_for_disorder(partner_state) % 2 == 0 else -1
                 partner_state = sorted(partner_state)
                 partner_state = tuple(map(tuple, partner_state))
                 partner_idx = vs.get_index(partner_state)
                 count_list.append(partner_idx)
 
                 data.append(1 / np.sqrt(2)); row.append(tbl_idx); col.append(tbl_idx)
-                data.append(ph / np.sqrt(2)); row.append(partner_idx); col.append(tbl_idx)
-                S_val[tbl_idx] = 1; Sz_val[tbl_idx] = 0
+                data.append(-ph / np.sqrt(2)); row.append(partner_idx); col.append(tbl_idx)
+                S_val[tbl_idx] = 0; Sz_val[tbl_idx] = 0
 
-                data.append(-ph / np.sqrt(2)); row.append(partner_idx); col.append(partner_idx)
                 data.append(1 / np.sqrt(2)); row.append(tbl_idx); col.append(partner_idx)
-                S_val[partner_idx] = 0; Sz_val[partner_idx] = 0
+                data.append(ph / np.sqrt(2)); row.append(partner_idx); col.append(partner_idx)
+                S_val[partner_idx] = 1; Sz_val[partner_idx] = 0
 
             else:
                 if orb1 == 'dxz':
@@ -112,8 +112,8 @@ def create_single_triplet_matrix(vs, d_double, d_part):
                     S_val[tbl_idx] = 0; Sz_val[tbl_idx] = 0
                     AorB_sym[tbl_idx] = 1
 
-                    data.append(-1 / np.sqrt(2)); row.append(partner_idx); col.append(partner_idx)
                     data.append(1 / np.sqrt(2)); row.append(tbl_idx); col.append(partner_idx)
+                    data.append(-1 / np.sqrt(2)); row.append(partner_idx); col.append(partner_idx)
                     S_val[partner_idx] = 0; Sz_val[partner_idx] = 0
                     AorB_sym[partner_idx] = -1
 
@@ -147,13 +147,40 @@ def create_bounding_anti_bounding_basis_change_matrix(vs):
         if sym_idx == tbl_idx:
             data.append(1.0); row.append(tbl_idx); col.append(tbl_idx)
         else:
-            data.append(1 / np.sqrt(2)); row.append(tbl_idx); col.append(sym_idx)
-            data.append(ph / np.sqrt(2)); row.append(sym_idx); col.append(tbl_idx)
-            bonding_val[tbl_idx] = 1
+            num_in_left_Ni = 0
+            num_in_right_Ni = 0
+            num_in_left_O = 0
+            num_in_right_O = 0
+            for x, y, _, _ in pre_state:
+                if (x, y) == (-1, 0):
+                    num_in_left_Ni += 1
+                if (x, y) == (1, 0):
+                    num_in_right_Ni += 1
+                if x < 0 and (x, y) != (-1, 0):
+                    num_in_left_O += 1
+                if x > 0 and (x, y) != (1, 0):
+                    num_in_right_O += 1
+            if num_in_left_Ni < num_in_right_Ni:
+                bound_idx = tbl_idx
+                anti_idx = sym_idx
+            elif num_in_left_Ni == num_in_right_Ni:
+                if num_in_left_O < num_in_right_O:
+                    bound_idx = tbl_idx
+                    anti_idx = sym_idx
+                else:
+                    bound_idx = sym_idx
+                    anti_idx = tbl_idx
+            else:
+                bound_idx = sym_idx
+                anti_idx = tbl_idx
 
-            data.append(1 / np.sqrt(2)); row.append(tbl_idx); col.append(tbl_idx)
-            data.append(-ph / np.sqrt(2)); row.append(sym_idx); col.append(sym_idx)
-            bonding_val[sym_idx] = -1
+            data.append(1 / np.sqrt(2)); row.append(bound_idx); col.append(bound_idx)
+            data.append(ph / np.sqrt(2)); row.append(anti_idx); col.append(bound_idx)
+            bonding_val[bound_idx] = 1
+
+            data.append(1 / np.sqrt(2)); row.append(bound_idx); col.append(anti_idx)
+            data.append(-ph / np.sqrt(2)); row.append(anti_idx); col.append(anti_idx)
+            bonding_val[anti_idx] = -1
 
             count_list.append(sym_idx)
     return sp.coo_matrix((data, (row, col)), shape=(dim, dim)), bonding_val

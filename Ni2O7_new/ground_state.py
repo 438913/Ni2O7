@@ -93,13 +93,13 @@ def get_ground_state(matrix, vs, S_Ni_val, Sz_Ni_val, bonding_val):
                 state_type_weight[state_type] = weight
                 specific_weight[state_type] = [tbl_idx]
         state_type_weight = sorted(state_type_weight.items(), key=lambda item: item[1], reverse=True)
-        with open('./data/val.txt', 'a') as f:
+        with open('data/val.txt', 'a') as f:
             f.write(f'{str(vals)}\n\n')
-        weight_file = open('./data/weight.txt', 'a')
+        weight_file = open('data/weight.txt', 'a')
         weight_file.write(f'total weight = {total}\n')
-        type_file = open('./data/type.txt', 'a')
+        type_file = open('data/type.txt', 'a')
         for state_type, type_weight in state_type_weight:
-            if type_weight > 0.01:
+            if type_weight > 0.005:
                 print(f'{state_type}: {type_weight}', end='\n')
                 weight_file.write(f'{state_type}: {type_weight}\n')
                 type_file.write(f'{state_type}: {type_weight}\n')
@@ -120,6 +120,8 @@ def get_ground_state(matrix, vs, S_Ni_val, Sz_Ni_val, bonding_val):
                         print(end='\n\t')
                         weight_file.write('\n\t')
                         for i in range(Ni_num):
+                            if S_Ni_val[i][tbl_idx] > 1:
+                                continue
                             print(f'Ni{i + 1}: S = {S_Ni_val[i][tbl_idx]}, Sz = {Sz_Ni_val[i][tbl_idx]}', end=', ')
                             weight_file.write(f'Ni{i + 1}: S = {S_Ni_val[i][tbl_idx]}, Sz = {Sz_Ni_val[i][tbl_idx]}, ')
                         weight_file.write(f'bonding = {bonding_val[tbl_idx]}\n\tweight = {weight}\n\n')
