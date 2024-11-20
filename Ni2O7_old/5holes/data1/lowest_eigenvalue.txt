@@ -1,0 +1,77 @@
+pressure = 0 Gpa  Sz = 0.5   tpp = 0.537
+lowest eigenvalue of H = 
+[5.36068778 5.5022051  5.87608232 6.21269142 6.93667585 7.01183882
+ 7.50395132 7.77718303 8.05597498 8.07865752]
+Degeneracy of  ground state is 1
+
+
+pressure = 0 Gpa  Sz = 0.5   tpp = 0.537
+lowest eigenvalue of H = 
+[3.02749406 3.11962282 3.6614152  3.88282495 4.1615581  4.26085231
+ 4.34382025 4.73799002 4.74174172 4.7623876 ]
+Degeneracy of  ground state is 1
+
+
+pressure = 0 Gpa  Sz = 0.5   tpp = 0.537
+lowest eigenvalue of H = 
+[5.36068778 5.5022051  5.87608232 6.21269142 6.93667585 7.01183882
+ 7.50395132 7.77718303 8.05597498 8.07865752]
+Degeneracy of  ground state is 1
+
+
+pressure = 0 Gpa  Sz = 0.5   tpp = 0.537
+lowest eigenvalue of H = 
+[5.36068778 5.5022051  5.87608232 6.21269142 6.93667585 7.01183882
+ 7.50395132 7.77718303 8.05597498 8.07865752]
+Degeneracy of  ground state is 1
+
+
+pressure = 0 Gpa  Sz = 0.5   tpp = 0.537
+lowest eigenvalue of H = 
+[5.36068778 5.5022051  5.87608232 6.21269142 6.93667585 7.01183882
+ 7.50395132 7.77718303 8.05597498 8.07865752]
+Degeneracy of  ground state is 1
+
+
+pressure = 0 Gpa  Sz = 0.5   tpp = 0.537
+lowest eigenvalue of H = 
+[5.36068778 5.5022051  5.87608232 6.21269142 6.93667585 7.01183882
+ 7.50395132 7.77718303 8.05597498 8.07865752]
+Degeneracy of  ground state is 1
+
+
+pressure = 0 Gpa  Sz = 0.5   tpp = 0.537
+lowest eigenvalue of H = 
+[5.36068778 5.5022051  5.87608232 6.21269142 6.93667585 7.01183882
+ 7.50395132 7.77718303 8.05597498 8.07865752]
+Degeneracy of  ground state is 1
+
+
+pressure = 4 Gpa  Sz = 0.5   tpp = 0.548
+lowest eigenvalue of H = 
+[5.14082111 5.28279213 5.66172741 6.02071668 6.67922662 6.75727007
+ 7.28777026 7.57593421 7.89104979 7.89909589]
+Degeneracy of  ground state is 1
+
+
+pressure = 8 Gpa  Sz = 0.5   tpp = 0.554
+lowest eigenvalue of H = 
+[5.0177385  5.15979506 5.54111096 5.91391058 6.53478654 6.61408879
+ 7.16750794 7.46402457 7.79973929 7.79993181]
+Degeneracy of  ground state is 1
+
+
+pressure = 16 Gpa  Sz = 0.5   tpp = 0.566
+lowest eigenvalue of H = 
+[4.7800951  4.92203859 5.3069326  5.70852876 6.25790417 6.33851934
+ 6.93681196 7.24931738 7.61018493 7.624697  ]
+Degeneracy of  ground state is 1
+
+
+pressure = 29.5 Gpa  Sz = 0.5   tpp = 0.562
+lowest eigenvalue of H = 
+[4.61275552 4.75300683 5.13683854 5.56453534 6.05463281 6.13668798
+ 6.77487346 7.09712132 7.47462173 7.49233364]
+Degeneracy of  ground state is 1
+
+

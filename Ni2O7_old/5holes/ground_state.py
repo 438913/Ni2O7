@@ -80,6 +80,7 @@ def get_ground_state(matrix, VS, S_Ni1_val, Sz_Ni1_val, S_Ni2_val, Sz_Ni2_val, b
     dim = vecs.shape[0]
     weights = abs(vecs[:, :number]) ** 2
     weights_average = np.average(weights, axis=1)
+    # weights_average = weights
     ilead = np.argsort(-weights_average)
     state_type_weight = {}
     specific_type_weight = {}

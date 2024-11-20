@@ -249,6 +249,7 @@ def create_bonding_anti_bonding_basis_change_matrix(VS):
         x5, y5, z5 = start_state['hole5_coord']
 
         slabel = [s1, orb1, x1, y1, z1, s2, orb2, x2, y2, z2, s3, orb3, x3, y3, z3, s4, orb4, x4, y4, z4, s5, orb5, x5,y5, z5]
+        slabel = ((x1, y1), (x2, y2), (x3, y3), (x4, y4), (x5, y5))
 
         # Two layers of Cu and Ni exchange position and when z=1 in apz orb,it's still itself
 
@@ -264,19 +265,55 @@ def create_bonding_anti_bonding_basis_change_matrix(VS):
 
         else:
             if i not in count_list:
+                num_in_left_Ni = 0
+                num_in_right_Ni = 0
+                num_in_left_O = 0
+                num_in_right_O = 0
+                for (x, y) in slabel:
+                    if (x, y) == (-1, 0):
+                        num_in_left_Ni += 1
+                    if (x, y) == (1, 0):
+                        num_in_right_Ni += 1
+                    if x < 0 and (x, y) != (-1, 0):
+                        num_in_left_O += 1
+                    if x > 0 and (x, y) != (1, 0):
+                        num_in_right_O += 1
+                if num_in_left_Ni < num_in_right_Ni:
+                    bound_idx = i
+                    anti_idx = j
+                elif num_in_left_Ni == num_in_right_Ni:
+                    if num_in_left_O < num_in_right_O:
+                        bound_idx = i
+                        anti_idx = j
+                    else:
+                        bound_idx = j
+                        anti_idx = i
+                else:
+                    bound_idx = j
+                    anti_idx = i
+
+                data.append(1.0); row.append(bound_idx); col.append(bound_idx)
+                data.append(phase); row.append(anti_idx); col.append(bound_idx)
+                bonding_val[bound_idx] = 1
+
+                data.append(1.0); row.append(bound_idx); col.append(anti_idx)
+                data.append(-phase); row.append(anti_idx); col.append(anti_idx)
+                bonding_val[anti_idx] = -1
+
+                count_list.append(j)
                 # append matrix elements for bonding
                 # convention: original state col i stores bonding and
                 #             partner state col j stores anti-bonding
-                data.append(1.0);row.append(i);col.append(i)
-                data.append(phase);row.append(j);col.append(i)
-                bonding_val[i] = 1
-
-                # append matrix elements for anti-bonding
-                data.append(1.0);row.append(i);col.append(j)
-                data.append(-phase);row.append(j);col.append(j)
-                bonding_val[j] = -1
-
-                count_list.append(j)
+                # data.append(1.0);row.append(i);col.append(i)
+                # data.append(phase);row.append(j);col.append(i)
+                # bonding_val[i] = 1
+                #
+                # # append matrix elements for anti-bonding
+                # data.append(1.0);row.append(i);col.append(j)
+                # data.append(-phase);row.append(j);col.append(j)
+                # bonding_val[j] = -1
+                #
+                # count_list.append(j)
 
 
 

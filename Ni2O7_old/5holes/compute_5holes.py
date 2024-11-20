@@ -1,31 +1,20 @@
 import math
-import numpy as np
-from scipy.sparse.linalg import inv
 # from numpy.linalg import inv
-import scipy.sparse as sps
-import scipy.sparse.linalg
-from scipy import integrate
 import sys
-import matplotlib.pyplot as plt
 
 sys.path.append('../../src/')
 from pylab import *
 
 import parameters as pam
-import lattice as lat
 import variational_space as vs
 
 # import hamiltonian as ham
 import hamiltonian as ham  # convention of putting U/2 to d8 and d10 separately
 
 import basis_change as basis
-import get_state as getstate
 import utility as util
-import plotfig as fig
-import ground_state_eigsh as gse
 import ground_state as gs
 # import ground_state_lanczos as gs
-import lanczos
 import time
 
 import diff_pressure
@@ -157,7 +146,7 @@ def compute_Aw_main(A, ep, tpd, tpp, tz_a1a1, tz_b1b1, pds, pdp, pps, ppp, Upp, 
 
 ##########################################################################
 if __name__ == '__main__':
-    for pressure in [0]:
+    for pressure in [0, 4, 8, 16, 29.5]:
         diff_pressure.pressure = pressure
         importlib.reload(pam)
         Mc = pam.Mc
