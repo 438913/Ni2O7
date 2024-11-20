@@ -23,7 +23,7 @@ if pressure == 0:
     #       'dxz': 0.0, \
     #       'dyz': 0.0}
     eps = np.arange(2.47, 2.471, 1.0)
-    # eps = np.arange(2.47, 2.471, 1.0)
+    # eps = np.arange(20.47, 20.471, 1.0)
 elif pressure == 4:
     ed = {'d3z2r2': 0.054, \
           'dx2y2': 0, \
@@ -124,7 +124,7 @@ eta = 0.1
 Lanczos_maxiter = 600
 
 # restriction on variational space
-reduce_VS = 0
+reduce_VS = 1
 Sz = 0
 Sz_list = {0: ['dn', 'dn', 'up', 'up'], 1: ['dn', 'up', 'up', 'up'], 2: ['up', 'up', 'up', 'up']}
 Sz_set = Sz_list[Sz]

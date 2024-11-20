@@ -1,18 +1,11 @@
 import math
-import numpy as np
-from scipy.sparse.linalg import inv
 # from numpy.linalg import inv
-import scipy.sparse as sps
-import scipy.sparse.linalg
-from scipy import integrate
 import sys
-import matplotlib.pyplot as plt
 
 sys.path.append('../../src/')
 from pylab import *
 
 import parameters as pam
-import lattice as lat
 import variational_space as vs
 
 # import hamiltonian as ham
@@ -20,10 +13,8 @@ import hamiltonian as ham  # convention of putting U/2 to d8 and d10 separately
 
 import basis_change as basis
 import utility as util
-import plotfig as fig
 import ground_state as gs
 # import ground_state_lanczos as gs
-import lanczos
 import time
 
 import diff_pressure
@@ -107,7 +98,7 @@ def compute_Aw_main(A, ep, tpd, tpp, tz_a1a1, tz_b1b1, pds, pdp, pps, ppp, Upp, 
         ####################################################################################
         # compute GS only for turning on full interactions
         if pam.if_get_ground_state == 1:
-            gs.get_ground_state(H_bond, VS, S_Ni1_val, Sz_Ni1_val, S_Ni2_val, Sz_Ni2_val, bonding_val)
+            gs.get_ground_state(H_bond, VS, S_Ni1_val, Sz_Ni1_val, S_Ni2_val, Sz_Ni2_val, bonding_val, U_Ni1, U_Ni2)
         #             if Norb==8:
         #                 util.write_GS('Egs_'+flowpeak+'.txt',A,ep,tpd,vals[0])
         #                 #util.write_GS_components('GS_weights_'+flowpeak+'.txt',A,ep,tpd,wgt_d8, wgt_d9L, wgt_d10L2)
@@ -151,7 +142,7 @@ def compute_Aw_main(A, ep, tpd, tpp, tz_a1a1, tz_b1b1, pds, pdp, pps, ppp, Upp, 
 
 ##########################################################################
 if __name__ == '__main__':
-    for pressure in [0]:
+    for pressure in [4]:
         diff_pressure.pressure = pressure
         importlib.reload(pam)
         Mc = pam.Mc

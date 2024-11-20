@@ -1,23 +1,13 @@
 import math
-import numpy as np
-from scipy.sparse.linalg import inv
 #from numpy.linalg import inv
-import scipy.sparse as sps
-import scipy.sparse.linalg
-from scipy import integrate
 import sys
-import matplotlib.pyplot as plt
+
 sys.path.append('../../src/')
 from pylab import *
 
 import parameters as pam
-import lattice as lat
-import variational_space as vs
-import hamiltonian as ham
-import basis_change as basis
 import get_state as getstate
 import utility as util
-import plotfig as fig
 import lanczos
 import time
 start_time = time.time()
@@ -189,9 +179,9 @@ def getAw(matrix,index,VS,w_vals):
     scratch = np.empty(dim, dtype = complex)
     Phi0 = np.zeros(dim, dtype = complex)
     Phi0[index] = 1.0
-    solver = lanczos.LanczosSolver(maxiter = pam.Lanczos_maxiter, 
-                                   precision = 1e-12, 
-                                   cond = 'UPTOMAX', 
+    solver = lanczos.LanczosSolver(maxiter = pam.Lanczos_maxiter,
+                                   precision = 1e-12,
+                                   cond = 'UPTOMAX',
                                    eps = 1e-8)
     solver.first_pass(x0 = Phi0, scratch = scratch, H = matrix)
     V, D = solver.lanczos_diag_T()

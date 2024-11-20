@@ -13,13 +13,13 @@ with open('./data1/simplified_state_weight.txt', 'r') as file:
             end_index = line.find('G')
             pressure = float(line[start_index + 1: end_index])
             pressures.append(pressure)
-        # if ':' in line:
-        #     key, value = line.split(':', 1)
-        #     key, value = key.strip(), float(value.strip())
-        #     if key not in state_type:
-        #         state_type[key] = [0] * (i - 1) + [value]
-        #     else:
-        #         state_type[key] += [0] * (i - 1 - len(state_type[key])) + [value]
+        if ':' in line:
+            key, value = line.split(':', 1)
+            key, value = key.strip(), float(value.strip())
+            if key not in state_type:
+                state_type[key] = [0] * (i - 1) + [value]
+            else:
+                state_type[key] += [0] * (i - 1 - len(state_type[key])) + [value]
 with open('./data1/lowest_eigenvalue.txt', 'r') as file:
     vals = []
     for line in file:
@@ -34,7 +34,7 @@ with open('./data1/lowest_eigenvalue.txt', 'r') as file:
 # for i in range(len(keys)):
 #     is_overlapping = False
 #     for j in range(i):
-#         if np.allclose(values[j], values[i], atol=0.001):
+#         if np.allclose(values[j], values[i], atol=0.01):
 #             is_overlapping = True
 #             break
 #     if is_overlapping:
@@ -42,17 +42,21 @@ with open('./data1/lowest_eigenvalue.txt', 'r') as file:
 #     else:
 #         labels.append(keys[i])
 #         ax.plot(pressures, values[i], marker='o')
-#
+
 # ax.legend(labels, bbox_to_anchor=(1.0, 1), loc=2,  labelspacing=1.2, frameon=False)
 # ax.set_xlabel(r'P$(GPa)$', fontsize=13)
 # ax.set_ylabel('Weight', fontsize=13)
-# ax.set_title('4holes  Sz=0')
+# ax.set_title('4 holes  Sz=0')
 # fig.subplots_adjust(right=0.76)
 # fig.show()
+
 pressures = pressures[0: 5]
 vals_Sz0 = vals[0: 5]
 vals_Sz1 = vals[5: 10]
 vals_Sz2 = vals[10: 15]
+print(pressures)
+print(vals_Sz1)
+print(vals_Sz2)
 vals0 = np.zeros_like(pressures)
 delta_vals_1 = np.array(vals_Sz1) - np.array(vals_Sz0)
 delta_vals_2 = np.array(vals_Sz2) - np.array(vals_Sz0)

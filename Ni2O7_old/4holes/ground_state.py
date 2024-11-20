@@ -48,7 +48,7 @@ def state_classification(state_param):
     return state_type
 
 
-def get_ground_state(matrix, VS, S_Ni1_val, Sz_Ni1_val, S_Ni2_val, Sz_Ni2_val, bonding_val):
+def get_ground_state(matrix, VS, S_Ni1_val, Sz_Ni1_val, S_Ni2_val, Sz_Ni2_val, bonding_val, U_Ni1, U_Ni2):
     """
     Obtain the ground state info, namely the lowest peak in Aw_dd's component
     in particular how much weight of various d8 channels: a1^2, b1^2, b2^2, e^2
@@ -58,6 +58,8 @@ def get_ground_state(matrix, VS, S_Ni1_val, Sz_Ni1_val, S_Ni2_val, Sz_Ni2_val, b
     # in case eigsh works:
     Neval = pam.Neval
     vals, vecs = sps.linalg.eigsh(matrix, k=Neval, which='SA')
+    # vecs = U_Ni2 @ vecs
+    # vecs = U_Ni1 @ vecs
 
     print('lowest eigenvalue of H from np.linalg.eigsh = ')
     print(vals)
@@ -77,9 +79,8 @@ def get_ground_state(matrix, VS, S_Ni1_val, Sz_Ni1_val, S_Ni2_val, Sz_Ni2_val, b
     txt.write(f'{vals}\r')
     txt.write(f'Degeneracy of  ground state is {number}\r\r\r')
     txt.close()
-    weights = abs(vecs[:, 1]) ** 2
-    # weights_average = np.average(weights, axis=1)
-    weights_average = weights
+    weights = abs(vecs[:, :number]) ** 2
+    weights_average = np.average(weights, axis=1)
     ilead = np.argsort(-weights_average)
     state_type_weight = {}
     type_specific_weight = {}
@@ -120,20 +121,20 @@ def get_ground_state(matrix, VS, S_Ni1_val, Sz_Ni1_val, S_Ni2_val, Sz_Ni2_val, b
     txt1.write(f'total weight = {total}\r')
     txt = open('./data1/simplified_state_weight.txt', 'a')
     for state_type, type_weight in weight_list:
-        if type_weight < 0.010:
-            if type_weight > 0.008:
-                txt.write(f'{state_type}: {type_weight}\r')
-                type_distribution['0.008 ~ 0.010'] += 1
-            elif type_weight > 0.006:
-                type_distribution['0.006 ~ 0.008'] += 1
-            elif type_weight > 0.004:
-                type_distribution['0.004 ~ 0.006'] += 1
-            elif type_weight > 0.002:
-                type_distribution['0.002 ~ 0.004'] += 1
-            else:
-                type_distribution['< 0.002'] += 1
-            other_type_weight += type_weight
-            continue
+        # if type_weight < 0.010:
+        #     if type_weight > 0.008:
+        #         txt.write(f'{state_type}: {type_weight}\r')
+        #         type_distribution['0.008 ~ 0.010'] += 1
+        #     elif type_weight > 0.006:
+        #         type_distribution['0.006 ~ 0.008'] += 1
+        #     elif type_weight > 0.004:
+        #         type_distribution['0.004 ~ 0.006'] += 1
+        #     elif type_weight > 0.002:
+        #         type_distribution['0.002 ~ 0.004'] += 1
+        #     else:
+        #         type_distribution['< 0.002'] += 1
+        #     other_type_weight += type_weight
+        #     continue
         txt.write(f'{state_type}: {type_weight}\r')
         txt1.write(f'{state_type}: {type_weight}\r')
         print(f'{state_type}: {type_weight}')
@@ -156,7 +157,7 @@ def get_ground_state(matrix, VS, S_Ni1_val, Sz_Ni1_val, S_Ni2_val, Sz_Ni2_val, b
             x3, y3, z3 = state['hole3_coord']
             x4, y4, z4 = state['hole4_coord']
             bonding = bonding_val[istate]
-            if weight > 0.005:
+            if weight > 0.001:
                 print ('       state ', istate, ' ',orb1,s1,x1,y1,z1,' ',orb2,s2,x2,y2,z2,' ',orb3,s3,x3,y3,z3,' ',orb4,s4,x4,y4,z4,
                    '\n       S_Ni1=', S_Ni1_val[istate], ',  Sz_Ni1=', Sz_Ni1_val[istate],
                    ',  S_Ni2=', S_Ni2_val[istate], ',  Sz_Ni2=', Sz_Ni2_val[istate], ',bonding=',bonding,
